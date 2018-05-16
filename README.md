@@ -20,4 +20,4 @@ You will be able to pass any id instead of 1 in the real API.
 
 ## Hosting
 
-You can fond an instance of it here : [http://ns347471.ip-5-39-76.eu/](http://ns347471.ip-5-39-76.eu/)
+You can fond an instance of it here : [http://ns347471.ip-5-39-76.eu/vyfe-api-stub](http://ns347471.ip-5-39-76.eu/vyfe-api-stub)
