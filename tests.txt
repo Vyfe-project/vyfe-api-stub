@@ -1,0 +1,34 @@
+curl http://localhost/vyfe-api-stub/groups
+curl http://localhost/vyfe-api-stub/groups/1
+curl -d "name=new" http://localhost/vyfe-api-stub/groups -v
+curl -d "name=new" -X PUT http://localhost/vyfe-api-stub/groups/1 -v
+curl -X PATCH http://localhost/vyfe-api-stub/goups/1 -v
+curl -X DELETE http://localhost/vyfe-api-stub/groups/1 -v
+
+curl http://localhost/vyfe-api-stub/sessions
+curl http://localhost/vyfe-api-stub/sessions/1
+curl -d "name=new&author=name&fk_group=1&video_link=link" http://localhost/vyfe-api-stub/sessions -v
+curl -d "name=new&author=name&fk_group=1&video_link=link" -X PUT http://localhost/vyfe-api-stub/sessions/1 -v
+curl -X PATCH http://localhost/vyfe-api-stub/sessions/1 -v
+curl -X DELETE http://localhost/vyfe-api-stub/sessions/1 -v
+
+curl http://localhost/vyfe-api-stub/tags
+curl http://localhost/vyfe-api-stub/tags/1
+curl -d "name=new&fk_tag_set=1" http://localhost/vyfe-api-stub/tags -v
+curl -d "name=new&fk_tag_set=1" -X PUT http://localhost/vyfe-api-stub/tags/1 -v
+curl -X PATCH http://localhost/vyfe-api-stub/tags/1 -v
+curl -X DELETE http://localhost/vyfe-api-stub/tags/1 -v
+
+curl http://localhost/vyfe-api-stub/tag_sessions
+curl http://localhost/vyfe-api-stub/tag_sessions/1
+curl -d "fk_tag=1&fk_session=1&start=1000&end=11000" http://localhost/vyfe-api-stub/tag_sessions -v
+curl -d "fk_tag=1&fk_session=1&start=1000&end=11000" -X PUT http://localhost/vyfe-api-stub/tag_sessions/1 -v
+curl -X PATCH http://localhost/vyfe-api-stub/tag_sessions/1 -v
+curl -X DELETE http://localhost/vyfe-api-stub/tag_sessions/1 -v
+
+curl http://localhost/vyfe-api-stub/tag_sets
+curl http://localhost/vyfe-api-stub/tag_sets/1
+curl -d "name=new" http://localhost/vyfe-api-stub/tag_sets -v
+curl -d "name=new" -X PUT http://localhost/vyfe-api-stub/tag_sets/1 -v
+curl -X PATCH http://localhost/vyfe-api-stub/tag_sets/1 -v
+curl -X DELETE http://localhost/vyfe-api-stub/tag_sets/1 -v
