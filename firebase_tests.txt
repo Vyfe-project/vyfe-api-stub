@@ -1,0 +1,41 @@
+BASE_URL=https://vyfe-dev.firebaseio.com
+GROUP_ID=-LEaH4UYvE-AIVfCIOUt
+SESSION_ID=-LEaHGT7MWcyIj53UWkn
+TAG_ID=-LEaHI7_TYGjP8nKn7Pe
+TAG_SESS_ID=-LEaIAl4MABicJt0v0ap
+TAG_SET_ID=-LEaIByxXQTF5u6CfBT3
+
+curl $BASE_URL/groups.json?print=pretty
+curl $BASE_URL/groups/$GROUP_ID.json?print=pretty
+curl -d '{"name":"new"}' $BASE_URL/groups.json -v
+curl -d '{"name":"change"}' -X PUT $BASE_URL/groups/$GROUP_ID.json -v
+curl -d '{"name":"patch"}' -X PATCH $BASE_URL/groups/$GROUP_ID.json -v
+curl -X DELETE $BASE_URL/groups/GROUP_ID.json -v
+
+curl $BASE_URL/sessions.json?print=pretty
+curl $BASE_URL/sessions/$SESSION_ID.json?print=pretty
+curl -d '{"name":"new", "author":"name", "fk_group":"", "video_link":"link"}' $BASE_URL/sessions.json -v
+curl -d '{"name":"new", "author":"name", "fk_group":"", "video_link":"link"}' -X PUT $BASE_URL/sessions/$SESSION_ID.json -v
+curl -d '{"name":"patch"}' -X PATCH $BASE_URL/sessions/$SESSION_ID -v
+curl -X DELETE $BASE_URL/sessions/$SESSION_ID -v
+
+curl $BASE_URL/tags.json?print=pretty
+curl $BASE_URL/tags/$TAG_ID.json?print=pretty
+curl -d '{"name":"new", "fk_tag_set":1}' $BASE_URL/tags.json -v
+curl -d '{"name":"new", "fk_tag_set":1}' -X PUT $BASE_URL/tags/$TAG_ID.json -v
+curl -d '{"name":"patch"}' -X PATCH $BASE_URL/tags/$TAG_ID.json -v
+curl -X DELETE $BASE_URL/tags/$TAG_ID.json -v
+
+curl $BASE_URL/tag_sessions.json?print=pretty
+curl $BASE_URL/tag_sessions/$TAG_SESS_ID.json?print=pretty
+curl -d '{"fk_tag":1, "fk_session":1, "start":1000, "end":11000}' $BASE_URL/tag_sessions.json -v
+curl -d '{"fk_tag":1, "fk_session":1, "start":1000, "end":11000}' -X PUT $BASE_URL/tag_sessions/$TAG_SESS_ID.json -v
+curl -d '{"start":0}' -X PATCH $BASE_URL/tag_sessions/$TAG_SESS_ID.json -v
+curl -X DELETE $BASE_URL/tag_sessions/$TAG_SESS_ID.json -v
+
+curl $BASE_URL/tag_sets.json?print=pretty
+curl $BASE_URL/tag_sets/$TAG_SET_ID.json
+curl -d '{"name":"new"}' $BASE_URL/tag_sets.json -v
+curl -d '{"name":"new"}' -X PUT $BASE_URL/tag_sets/$TAG_SET_ID.json -v
+curl -d '{"name":"patch"}' -X PATCH $BASE_URL/tag_sets/$TAG_SET_ID.json -v
+curl -X DELETE $BASE_URL/tag_sets/$TAG_SET_ID.json -v
